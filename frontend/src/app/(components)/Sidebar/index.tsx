@@ -82,20 +82,12 @@ const Sidebar = () => {
         }`}
       >
         <Image
-          src="https://s3-inventsync.s3.us-east-2.amazonaws.com/logo.png"
+          src="https://s3-inventsync.s3.us-east-2.amazonaws.com/profile.png"
           alt="edstock-logo"
           width={27}
           height={27}
           className="rounded w-8"
         />
-        <h1
-          className={`${
-            isSidebarCollapsed ? "hidden" : "block"
-          } font-extrabold text-2xl`}
-        >
-          EDSTOCK
-        </h1>
-
         <button
           className="md:hidden px-3 py-3 bg-gray-100 rounded-full hover:bg-blue-100"
           onClick={toggleSidebar}
