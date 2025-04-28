@@ -12,10 +12,10 @@ import {
   SlidersHorizontal,
   User,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import Logo from "../logo";
 
 interface SidebarLinkProps {
   href: string;
@@ -77,17 +77,20 @@ const Sidebar = () => {
     <div className={sidebarClassNames}>
       {/* TOP LOGO */}
       <div
-        className={`flex gap-3 justify-between md:justify-normal items-center pt-8 ${
-          isSidebarCollapsed ? "px-5" : "px-8"
+        className={`flex gap-3 justify-between md:justify-normal items-center pt-6 ${
+          isSidebarCollapsed ? "px-2 justify-center" : "px-4 justify-center"
         }`}
       >
-        <Image
-          src="https://s3-inventsync.s3.us-east-2.amazonaws.com/profile.png"
-          alt="edstock-logo"
-          width={27}
-          height={27}
-          className="rounded w-8"
-        />
+        <div
+          className={`items-center justify-center ${
+            isSidebarCollapsed ? "scale-75" : "scale-100"
+          } transition-transform duration-300`}
+        >
+          <div className="w-full flex justify-center">
+            <Logo />
+          </div>
+        </div>
+
         <button
           className="md:hidden px-3 py-3 bg-gray-100 rounded-full hover:bg-blue-100"
           onClick={toggleSidebar}
@@ -138,7 +141,9 @@ const Sidebar = () => {
 
       {/* FOOTER */}
       <div className={`${isSidebarCollapsed ? "hidden" : "block"} mb-10`}>
-        <p className="text-center text-xs text-gray-500">&copy; 2024 Edstock</p>
+        <p className="text-center text-xs text-gray-500">
+          &copy;2025 inventSync
+        </p>
       </div>
     </div>
   );
